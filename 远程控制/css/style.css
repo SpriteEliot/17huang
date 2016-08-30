@@ -1,0 +1,75 @@
+*{padding: 0;margin: 0; font-family:"微软雅黑";}
+li{list-style: none;  cursor:pointer;}
+.clear{clear: both;}
+.wrap{
+	width: 100%;
+	background: #2a6496;
+
+	border: 1px solid red;
+}
+
+
+
+  .loginPanel {
+            
+            left: 400px;
+            top: 50px;
+            position: fixed;
+            border: 1px solid green;
+            background: #f6f6f6;
+            -moz-box-shadow: 0 0 8px #000;
+            -webkit-box-shadow: 0 0 8px #000;
+            box-shadow: 0 0 8px #000;
+        }
+
+
+        .drag-area {
+            border: 1px solid black;
+  
+         
+            height: 30px;
+            cursor: move;
+            text-align: center;
+        }
+
+        .ui_boxyClose{width:28px;height:28px;position:absolute;right:0px;top:5px;cursor:pointer;z-index:1}.ie6_0 .ui_boxyClose{background:0;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='boxy_btn.png',sizingMethod='scale')}
+        .ui_boxyClose span{color: #666;
+            width:28px;
+            height:28px; 
+        }
+        .ui_boxyClose span:hover{
+            color:#2a6496;
+        }
+
+        .phone-area{
+        	
+        	
+        	background: #333;
+        
+        }
+         
+
+        .feature{
+       
+        	height: 44px;
+
+        	border: 1px solid green;
+        }
+.fearue-child{
+	width: 33.33%;
+	height: 44px;
+	float: left;
+	border: 1px solid   yellow;
+    cursor: pointer;
+    text-align: center;
+    line-height: 44px;
+}
+.fearue-child span{
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+
+.fearue-child:hover span{
+    color:#2a6496;
+}
