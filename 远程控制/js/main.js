@@ -15,4 +15,5 @@ function init(){
 
 	drag();
 	imgConsole();
+	setInterval(imgChange,1500);
 }
