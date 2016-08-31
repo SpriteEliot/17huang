@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css">
+
+<script type="text/javascript" src="js/jquery/jquery-2.2.4.js"></script>
+
+
+    <script src="js/jquery/bootstrap.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="css/full.css">
+
+
+<html>
+<head>
+    <title>全屏插件控制</title>
+</head>
+<style>
+
+</style>
+<body>
+
+<button  class="btn btn-primary" onclick="launchFullScreen(document.documentElement)" id="fulls">点击全屏</button>
+<div class="screen" id="fullofscreen">
+<span class="glyphicon glyphicon-remove" aria-hidden="true" id="turnoff" onclick="exitFullscreen()"></span>
+<img src="img/iphone.jpg" id="fullimg">           
+ </div>       
+<script>
+var turnoff=document.getElementById("turnoff");
+var fullimg=document.getElementById("fullimg");
+var fullofscreen=document.getElementById("fullofscreen");
+
+
+           // 找到支持的方法, 使用需要全屏的 element 调用 
+function launchFullScreen(element) { 
+if(element.requestFullscreen) { 
+element.requestFullscreen(); 
+} else if(element.mozRequestFullScreen) { 
+element.mozRequestFullScreen(); 
+} else if(element.webkitRequestFullscreen) { 
+element.webkitRequestFullscreen(); 
+} else if(element.msRequestFullscreen) { 
+element.msRequestFullscreen(); 
+} 
+
+fullofscreen.style.height=window.screen.height+'px';
+fullofscreen.style.display="block";
+fullimg.height=window.screen.height;
+
+} 
+function exitFullscreen() { 
+if(document.exitFullscreen) { 
+document.exitFullscreen(); 
+} else if(document.mozExitFullScreen) { 
+document.mozExitFullScreen(); 
+} else if(document.webkitExitFullscreen) { 
+document.webkitExitFullscreen(); 
+} 
+fullofscreen.style.display="none";
+
+} 
+
+
+
+
+        </script>
+
+</body>
+</html>

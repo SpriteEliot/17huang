@@ -23,15 +23,21 @@ function drag(){
    var oClose=document.getElementById("ui_boxyClose");
    oClose.onclick=function() {
    document.getElementById("loginPanel").style.display="none";
+   clearInterval(timer);
    }
 
 
   var oStart=document.getElementById("oStart");
 
   oStart.onclick=function(){
+    if(document.getElementById("loginPanel").style.display == "none"){
     document.getElementById("loginPanel").style.display="block";
+    timer=setInterval(imgChange,1500);
+  }else{
+    document.getElementById("loginPanel").style.display="none";
+    clearInterval(timer);
   }
-
+}
 /*
    loginState.onclick=function(e){
      e = e || window.event;
