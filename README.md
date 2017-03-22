@@ -1,3 +1,6 @@
 # 17huang
-something  can show<br>
-<p style='color:red;'>说明：一些可以展示的前端代码，根据实际工作中的业务需求封装的一些插件</p>
+# something  can show<br>
+ <p style='color:red;'>说明：一些可以展示的前端代码，根据实际工作中的业务需求封装的一些插件</p>
+ <p><b>插件名称：</b>关系树。</p> 
+<p><b>描述：</b>根据实际业务需求，利用树状图展示层级关系的数据。</p>
+<p><b>实现思路：</b>数据获取通过ajax从后台获取，利用canvas绘制树状图</p>
