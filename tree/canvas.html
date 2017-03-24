@@ -1,11 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
 
-    </body>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <button onclick="myFunction()">点我</button>
+
+
+    <canvas id="line" class="line">
+    </canvas>
+
+    <script>
+var line = document.getElementById('line');
+var drawLine = line.getContext('2d');
+
+function myFunction() {
+    line.width=1000;
+    line.height=500;
+    draw(500,250,100);
+
+}
+
+function draw(x,y,l){
+drawRowLine(x,y,l*3);
+drawLeftRowLine(x,y,l*3);
+drawLeftLine(x,y,l);
+drawRightLine(x,y,l);
+drawleftDownLine(x,y,l);
+drawRightUpLine(x,y,l);
+
+
+}
+
+
+
+
+//横线
+function drawRowLine(x,y,length){
+    timer=null;
+    let iLen = 0;
+    function rowLine(){  
+        if(iLen<=length){  
+            drawLine.moveTo(x,y);  
+            drawLine.lineTo(++x,y);  
+            iLen++;  
+            drawLine.stroke();  
+        }else{  
+        }     
+    }  
+    var timer=setInterval(rowLine,5);  
+}
+function drawLeftRowLine(x,y,length){
+    timer=null;  
+    let iLen = 0;
+    length=length;
+    function rowLine(){  
+        if(iLen<=length){  
+            drawLine.moveTo(x,y);  
+            drawLine.lineTo(--x,y);  
+            iLen++;  
+            drawLine.stroke(); 
+        }else{  
+        } 
+    }  
+     var timer=setInterval(rowLine,5);  
+}
+//向下画线
+function drawDownLine(x,y,length){
+    let i=0;
+    function downLine(){
+        if(i<length){
+            drawLine.moveTo(x,y);
+            drawLine.lineTo(x,++y);
+            i++;
+            drawLine.stroke;
+            
+        }else{
+
+        }
+    }
+    setInterval(downLine,5);
+}
+//向右下画线
+function drawLeftLine(x,y,length){
+    let i=0;
+    var endx=x;
+    var endy=y;
+    function downLine(){
+        if(i<length){
+            drawLine.moveTo(x,y);
+            drawLine.lineTo(++x,++y);
+            i++;
+            endx++;
+            endy++;
+            drawLine.stroke;
+        }else{
+             drawLine.moveTo( endx,endy);
+             drawLine.lineTo(++endx,endy);
+        }
+
+
+        
+    }
+    
+    setInterval(downLine,5);
+   
+    
+}
+
+//左上
+function drawRightLine(x,y,length){
+    let i=0;
+     var endx=x;
+    var endy=y;
+    function downLine(){
+        if(i<length){
+            drawLine.moveTo(x,y);
+            drawLine.lineTo(--x,--y);
+            i++;
+            endx--;
+            endy--;
+            drawLine.stroke;
+        }else{
+            drawLine.moveTo( endx,endy);
+             drawLine.lineTo(--endx,endy);
+        }
+    }
+    setInterval(downLine,5);
+}
+//左下
+function drawleftDownLine(x,y,length){
+    let i=0;
+     var endx=x;
+    var endy=y;
+    function downLine(){
+        if(i<length){
+            drawLine.moveTo(x,y);
+            drawLine.lineTo(--x,++y);
+            i++;
+            endx--;
+            endy++;
+            drawLine.stroke;
+        }else{
+            drawLine.moveTo( endx,endy);
+             drawLine.lineTo(--endx,endy);
+        }
+    }
+    setInterval(downLine,5);
+}
+//右上
+function drawRightUpLine(x,y,length){
+ let i=0;
+     var endx=x;
+    var endy=y;
+    function downLine(){
+        if(i<length){
+            drawLine.moveTo(x,y);
+            drawLine.lineTo(++x,--y);
+            i++;
+            endx++;
+            endy--;
+            drawLine.stroke;
+        }else{
+            drawLine.moveTo( endx,endy);
+             drawLine.lineTo(++endx,endy);
+        }
+    }
+    setInterval(downLine,5);
+}
+</script>
+
+</body>
+
 </html>
