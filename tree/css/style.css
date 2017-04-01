@@ -1,37 +1,50 @@
-*{margin: 0;padding: 0;}
+* {
+    margin: 0;
+    padding: 0;
+}
 
-body.html{
+body.html {
     width: 100%;
     height: 100%;
     overflow: hidden;
     font-family: '微软雅黑';
 }
-img{
+
+img {
     display: block;
+    width: 50px;
 }
 
-
-.warp{
+.warp {
     width: 50%;
     margin: 0 auto;
 }
 
-.warp .one-level-agent{
+.warp .one-level-agent {
     width: 25%;
 }
-.warp .one-level-agent img{
+
+.warp .one-level-agent img {
     width: 100%;
 }
-.warp .one-level-agent .userName{
+
+.warp .one-level-agent .userName {
     display: block;
     text-align: center;
 }
-.line{
-overflow:hidden;
-width: 1000px;
-height: 500px;
-}
-svg{
+
+.line {
+    overflow: hidden;
     width: 1000px;
     height: 500px;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+a {
+    color: #333;
 }
