@@ -1,12 +1,14 @@
 const DIR = 'img/';
 // create an array with nodes
 const ajax = new XMLHttpRequest();
+var color='rgba('+Math.round(Math.random()*250)+','+Math.round(Math.random()*250)+','+Math.round(Math.random()*250)+',1)';
+console.log(color);
 var arr = [{
 	id: "7777777",
 	image: "img/head.png",
-	label: "总代理",
+	label: "总代理 color",
 	shape: "circularImage",
-	color: '#7BE141'
+	color: color
 }];
 var lineArr = new Array();
 var line = {
@@ -23,7 +25,8 @@ function getData(id, api) {
 
 				let line = {
 					from: id,
-					to: data.data.data[i].id
+					to: data.data.data[i].id,
+					arrows:'to'
 				}
 
 				lineArr.push(line);
