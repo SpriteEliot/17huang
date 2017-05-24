@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"
+    />
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery-2.2.4.min.js"></script>
+</head>
+
+<body>
+    <div class="warp">
+        <div class="nav">
+            <div class="search">
+                <img src="img/search.png">
+            </div>
+            <span class="date">
+               <span id ='now-date'>
+                   <script>
+                   var today = new Date(),
+                    year = today.getFullYear(), //获取日期中的年份
+                     months = today.getMonth()+1, //获取日期中的月份(需要注意的是：月份是从0开始计算，获取的值比正常月份的值少1)
+                    day = today.getDate(); 
+                    document.write(year+'-'+months+'-'+day);
+                   </script>
+               </span>
+            <span class="arrow"><img src="img/arrow.png"></span>
+            </span>
+
+
+
+        </div>
+        <div class="calender" id="calendar">
+
+
+
+        </div>
+        
+</body>
+<script src="js/index.js"></script>
+
+</html>
