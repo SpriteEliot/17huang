@@ -1,0 +1,150 @@
+<ion-header>
+    <ion-toolbar class="nav" color='secondary'>
+        <ion-buttons start>
+            <ion-icon name="ios-search-outline"></ion-icon>
+
+        </ion-buttons>
+
+        <ion-label no-margin class="date">
+            <ion-label no-margin id='now-date'>
+                {{timer.nowDate}}
+            </ion-label>
+
+
+            <ion-icon name="ios-arrow-down" (click)='timer.switch()'></ion-icon>
+
+        </ion-label>
+
+        <ion-buttons end>
+            <ion-label no-margin class="now">今天
+                <ion-icon name="ios-add-outline"></ion-icon>
+            </ion-label>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="warp">
+        <calendar #timer></calendar>
+
+        <ion-card class="person">
+            <ion-grid>
+                <ion-row class='identity '>
+
+
+                    <ion-col col-2 class="title-div">
+                        <ion-label no-margin class="title">身份：</ion-label>
+                    </ion-col>
+                    <ion-col col-8 class="tag-div">
+                        <ion-row class="first-floor">
+                            <ion-col col-3>
+                                <ion-label no-margin class="tag">交办人</ion-label>
+
+                            </ion-col>
+                            <ion-col col-3>
+                                <ion-label no-margin class="tag">经办人</ion-label>
+                            </ion-col>
+                            <ion-col col-3>
+                                <ion-label no-margin class="tag">证人</ion-label>
+                            </ion-col>
+                            <ion-col col-3>
+                                <ion-label no-margin class="tag">外围人</ion-label>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row class="second-floor" *ngIf='calState1 '>
+                            <ion-col col-3>
+                                <ion-label no-margin class="tag">客户</ion-label>
+                            </ion-col>
+                            <ion-col col-3>
+                                <ion-label no-margin class="tag">供应商</ion-label>
+                            </ion-col>
+                            <ion-col col-3>
+                                <ion-label no-margin class="tag">领导</ion-label>
+                            </ion-col>
+                        </ion-row>
+                    </ion-col>
+                    <ion-col col-2 class="edit">
+                        <ion-label no-margin class="double" (click)='changeState() '></ion-label>
+                        <ion-icon float-right name="ios-add-outline"></ion-icon>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <ion-card class="line"></ion-card>
+            <ion-grid>
+                <ion-row class="second">
+
+                    <ion-col col-2 class="title-div">
+                        <ion-label no-margin class="title">类型：</ion-label>
+                    </ion-col>
+                    <ion-col col-8 class="tag-div">
+                        <ion-row class="first-floor">
+                            <ion-col col-3>
+                                <ion-label no-margin class="tag">必须做</ion-label>
+                            </ion-col>
+                            <ion-col col-3>
+                                <ion-label no-margin class="tag">提醒</ion-label>
+                            </ion-col>
+                            <ion-col col-3>
+                                <ion-label no-margin class="tag">最新</ion-label>
+                            </ion-col>
+                            <ion-col col-3>
+                                <ion-label no-margin class="tag">完成</ion-label>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row class="second-floor" *ngIf='calState2 '>
+                            <ion-col col-3>
+                                <ion-label no-margin class="tag">自定义</ion-label>
+                            </ion-col>
+                            <ion-col col-3>
+                                <ion-label no-margin class="tag">其他</ion-label>
+                            </ion-col>
+                        </ion-row>
+                    </ion-col>
+                    <ion-col col-2 class="edit">
+                        <ion-label no-margin class="double" (click)='changeState2() '></ion-label>
+                        <ion-icon float-right name="ios-add-outline"></ion-icon>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card>
+        <ion-card class="matter">
+            <ion-card class="matter-title">
+
+                <ion-label no-margin class="matter-tips">
+
+                    <ion-label no-margin no-padding float-right>个新发言</ion-label>
+                    <ion-label no-margin no-padding color='light' float-right class="orange">3</ion-label>
+                    <ion-label no-margin no-padding float-right>条事项 /</ion-label>
+                    <ion-label no-margin no-padding color='light' float-right class="red">5</ion-label>
+                    <ion-label no-margin no-padding float-right>共有</ion-label>
+
+                </ion-label>
+            </ion-card>
+            <ion-card class="set" *ngFor='let table of tableData'>
+                <ion-grid>
+
+                    <ion-row>
+                        <ion-col>
+                            <ion-label no-margin class="item-name">{{table.name}}</ion-label>
+                        </ion-col>
+                        <ion-col>
+                            <ion-label no-margin class="item-tips">
+                                <ion-label no-margin float-left class="orange">{{table.number}}</ion-label>条新发言 /共{{table.num}}条</ion-label>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="item-second">
+                        <ion-col>
+                            <ion-label no-margin class="item-content">
+                                <ion-icon name="ios-clock-outline"></ion-icon>{{table.tips}}</ion-label>
+                        </ion-col>
+                        <ion-col>
+                            <ion-label no-margin class="item-state">{{table.state}}</ion-label>
+                        </ion-col>
+                    </ion-row>
+
+                </ion-grid>
+                <ion-card class="line"></ion-card>
+            </ion-card>
+        </ion-card>
+    </ion-card>
+</ion-content>
