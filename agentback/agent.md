@@ -8,11 +8,6 @@
 | 最低系统版本要求    |7.3及以上   | 4.0及以上    | 
 
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
 
 
 
